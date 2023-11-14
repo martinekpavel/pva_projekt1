@@ -1,53 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+:root {
+    --primary-color: #427b00;
+}
+
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --primary-color: rgb(130, 157, 0);
-    --secondary-color: rgb(255, 179, 131);
-}
-
-.text-primary  {
-    color: var(--primary-color);
-}
-
-h2 {
-    margin: 2rem 0;
-}
-
-#zdroje p {
-    margin: 0;
-}
-
-#zdroje ol {
-    margin: 1rem;
-}
-
-section {
-    margin: 0 1rem;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
 }
 
-#logo {
-    font-weight: bold;
-    font-size: 2rem;
+.text-primary {
+    color: var(--primary-color);
 }
 
+p {
+    margin: 0.75rem 0;
+}
 
 #navbar {
-    background-color: #333333;
+    background-color: #333;
     color: white;
     display: flex;
     justify-content: space-between;
     padding: 1rem;
-    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 #navbar a {
@@ -67,18 +50,17 @@ body {
 }
 
 #navbar ul li a:hover {
-    background-color:  var(--primary-color);
+    background-color: var(--primary-color);
     border-radius: 5px;
-    color: black;
 }
 
 #showcase {
-    background: #333 url('../img/bg-inferno.jpg') no-repeat center center/cover;
-    height: 90vh;
+    background: #333 url('../img/bg-code.jpg') no-repeat center center/cover;
+    height: 100vh;
     color: white;
 }
 
-#showcase .showcase-content {
+#showcase .content {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -86,12 +68,12 @@ body {
     align-items: center;
     height: 100%;
     padding: 0 2rem;
-    background-color: rgba(0,0,0,.5);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .l-heading {
     font-size: 4rem;
-    margin-bottom: 1.3rem;
+    margin-bottom: 0.75rem;
     line-height: 1.1;
 }
 
@@ -102,16 +84,24 @@ body {
 
 .btn {
     display: inline-block;
-    color: black;
-    text-decoration: none;
+    color: white;
     background-color: var(--primary-color);
-    padding: 1rem 2rem;
+    padding: 0.5rem 2rem;
     border: none;
-    border-radius: 7px;
+    border-radius: 5px;
+    text-decoration: none;
 }
 
-.btn:hover {
-    background-color:  var(--secondary-color);
+.py-1 {
+    padding: 1.5rem 0;
+}
+
+.p-1 {
+    padding: 1.5rem;
+}
+
+.m-1 {
+    margin: 1.5rem
 }
 
 .container {
@@ -119,7 +109,6 @@ body {
     margin: auto;
     padding: 0 2rem;
     overflow: hidden;
-
 }
 
 .text-center {
@@ -128,39 +117,236 @@ body {
 
 .m-heading {
     font-size: 2rem;
-    margin-bottom: 1rem;
-
+    margin-bottom: 0.75rem;
 }
 
-.py-1 {
-    padding: 1.5rem 0;
+h2 {
+    margin: 3rem;
+    padding: 3rem;
 }
 
-#what .items {
+
+#naucitese .items {
     display: flex;
     padding: 1rem;
+    justify-content: space-around;
 }
 
-#what .item {
+#naucitese .item {
+    position: relative;
+    text-align: center;
+    padding: 1rem;
+    width: 200px;
+    top: 0;
+}
+
+#naucitese .items .item i {
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    margin: 1rem 0;
+    width: 4rem;
+    height: 4rem;
+    line-height: 4rem;
+    color: white;
+}
+
+#naucitese .item:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    top: -10px;
+    transition: all 0.5s ease;
+}
+
+.bg-dark {
+    background-color: #555;
+    color: white;
+}
+
+#footer {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#footer a {
+    color: white;
+    text-decoration: none;
+
+}
+
+#nastroje .items {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#nastroje .item {
+    position: relative;
+    background-color: white;
+    padding: 0.3rem;
+    margin-bottom: 2rem;
+}
+
+#nastroje .item:hover .overlay {
+    width: 100%;
+}
+
+
+#nastroje .image {
+    width: 400px;
+}
+
+#nastroje .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--primary-color);
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+}
+
+#nastroje .text {
+    white-space: nowrap;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.my-table {
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+.my-table td,
+.my-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.my-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.my-table tr:hover {
+    background-color: #ddd;
+}
+
+.my-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+label,
+input,
+legend,
+textarea {
+    margin: 1rem;
+    padding: 1rem;
+
+}
+
+label {
+    color: var(--primary-color);
+    font-weight: bold;
+
+}
+
+input,
+textarea {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
+    border: none;
+    background-color: transparent;
+}
+
+input[type="text"],
+input[type="url"],
+textarea {
+    width: 95%;
+}
+
+input[type="radio"] {
+    box-shadow: none;
+}
+
+#kontakt ul {
+    margin: 0.5rem 0;
+    list-style: none;
+}
+
+#kontakt li {
+    padding: 0.5rem 0;
+    border-bottom: white dotted 2px;
+}
+
+#kontakt h2 {
+    margin: 1rem 0;
+    padding: 1rem 0;
+}
+
+#kontakt .container {
+    display: flex;
+}
+
+#kontakt div {
+    flex: 1;
+}
+
+#kontakt .kontakt-img {
+    background: url("../img/kontakt.jpg") no-repeat center center/cover;
+}
+
+#parallax {
+    /* The image used */
+    background-image: url("../img/bg-parallax.jpg");
+    height: 400px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#parallax .content {
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding: 1rem;
+    justify-content: center;
     align-items: center;
-    justify-items: center;
-    text-align: center;
-
+    height: 100%;
+    padding: 0 2rem;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
-#what .items .item i {
-    background-color: var(--primary-color);
-    padding-top: 2.5rem;
-    border-radius: 50%;
-    height: 5rem;
-    width: 5rem;
-
+#parallax .content h2 {
+    background-color: white;
+    padding: 0.5rem;
 }
 
-h3 {
-    margin: 1rem
+@media only screen and (max-width: 600px) {
+    #navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    h1 {
+        margin-bottom: 1rem;
+        font-size: 3rem;
+    }
+
+    #kontakt .kontakt-img {
+        display: none;
+    }
 }
